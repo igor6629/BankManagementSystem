@@ -11,6 +11,9 @@ namespace ClientSpace
 		std::string name;
 		std::string lastname;
 		
+		std::string login;
+		uint32_t password;
+		
 		float balance;
 		float deposit;
 		float percentage = 10;
@@ -27,5 +30,6 @@ namespace ClientSpace
 		void OpenDeposit(float count);
 		void ChangeDeposit(float count);
 		void CheckDeposit();
+		void CloseDeposit();
 	};
 }

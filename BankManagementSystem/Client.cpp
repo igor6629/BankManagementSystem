@@ -101,8 +101,43 @@ namespace ClientSpace
 		{
 			float profit = deposit * (percentage / 100);
 			balance += profit;
+
+			if (closeDeposit)
+			{
+				CloseDeposit();
+			}
+
 			lastTimeOfDeposit = currentDate;
 			currentWeekOfDeposit = lastTimeOfDeposit + (3600 * 24 * 7);
+		}
+	}
+
+	void Client::CloseDeposit()
+	{
+		if (lastTimeOfDeposit == NULL)
+		{
+			cout << "Error! The deposit is not opet yet." << endl;
+		}
+		else
+		{
+			time_t currentDate = time(0);
+
+			if (currentDate > currentWeekOfDeposit)
+			{
+				closeDeposit = true;
+				cout << "The money will be returned to your account at the expiration of the contract." << endl;
+			}
+			else
+			{
+				balance += deposit;
+				deposit = 0;
+				
+				lastTimeOfDeposit = NULL;
+				currentWeekOfDeposit = NULL;
+				closeDeposit = true;
+
+				cout << "The deposit is closed.The money was returned to the account." << endl;
+			}
 		}
 	}
 }
