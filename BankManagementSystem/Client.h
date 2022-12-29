@@ -13,7 +13,7 @@ namespace ClientSpace
 		
 		float balance;
 		float deposit;
-		uint32_t percentage = 10;
+		float percentage = 10;
 		
 		time_t lastTimeOfDeposit = NULL;
 		time_t currentWeekOfDeposit = NULL;

@@ -97,8 +97,12 @@ namespace ClientSpace
 	{
 		time_t currentDate = time(0);
 
-		if (lastTimeOfDeposit + (3600 * 24 * 365) <= currentDate)
+		if (lastTimeOfDeposit + (3600 * 24 * 365) >= currentDate)
 		{
+			float profit = deposit * (percentage / 100);
+			balance += profit;
+			lastTimeOfDeposit = currentDate;
+			currentWeekOfDeposit = lastTimeOfDeposit + (3600 * 24 * 7);
 		}
 	}
 }
