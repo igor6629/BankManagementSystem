@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <time.h>
 
 namespace ClientSpace 
 {
@@ -9,13 +10,22 @@ namespace ClientSpace
 	private:
 		std::string name;
 		std::string lastname;
-		uint32_t balance;
+		
+		float balance;
+		float deposit;
 		uint32_t percentage = 10;
+		
+		time_t lastTimeOfDeposit = NULL;
+		time_t currentWeekOfDeposit = NULL;
+		
+		bool closeDeposit = false;
 	public:
 		Client(std::string name, std:: string lastname);
-		std::string GetName();
 		void ShowInfo();
-		void Deposit(uint32_t count);
-		void Withdraw(uint32_t count);
+		void Replenishment(float count);
+		void Withdraw(float count);
+		void OpenDeposit(float count);
+		void ChangeDeposit(float count);
+		void CheckDeposit();
 	};
 }
