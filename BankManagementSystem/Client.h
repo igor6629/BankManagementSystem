@@ -14,8 +14,8 @@ namespace Account
 		std::string login;
 		uint32_t password;
 		
-		float balance;
-		float deposit;
+		float balance = 0;
+		float deposit = 0;
 		float percentage = 10;
 		
 		time_t lastTimeOfDeposit = NULL;
@@ -24,7 +24,6 @@ namespace Account
 		bool closeDeposit = false;
 	
 	public:
-		Client(std::string name, std:: string lastname);
 		void ShowInfo();
 		void Replenishment(float count);
 		void Withdraw(float count);

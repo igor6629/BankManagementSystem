@@ -6,14 +6,6 @@ using namespace std;
 
 namespace Account
 {
-	Client::Client(string name, string lastname)
-	{
-		this->name = name;
-		this->lastname = lastname;
-		balance = 0;
-		deposit = 0;
-	}
-
 	void Client::ShowInfo()
 	{
 		cout << name << " " << lastname << " " << balance << endl;
