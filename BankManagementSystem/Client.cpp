@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace ClientSpace
+namespace Account
 {
 	Client::Client(string name, string lastname)
 	{

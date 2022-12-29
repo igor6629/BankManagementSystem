@@ -3,7 +3,7 @@
 #include <string>
 #include <time.h>
 
-namespace ClientSpace 
+namespace Account 
 {
 	class Client
 	{
