@@ -11,18 +11,12 @@ void header()
 	cout << "-----------------------------------------------------------------" << endl << endl;
 }
 
-void menu()
+int  menu()
 {
 	cout << "\tMENU" << endl;
 	cout << "___________________" << endl;
 	cout << "1) Create Account\n" << "2) Sign In\n" << "3) Exit" << endl << endl;
-}
 
-int main()
-{
-	header();
-	menu();
-	
 	int operation = 0;
 
 	do
@@ -31,20 +25,44 @@ int main()
 		cin >> operation;
 	} while (operation > 3 || operation <= 0);
 
+	return operation;
+}
+
+bool createNewClient()
+{
+	Client newClient;
+	return true;
+}
+
+void choose(int operation)
+{
 	switch (operation)
 	{
 	case 1:
 		header();
-		cout << "Hi" << endl;
+		
+		if (!createNewClient())
+		{
+			int newOperation = menu();
+			choose(newOperation);
+		}
+
 		break;
 	case 2:
 		header();
 		cout << "Sign in" << endl;
 	case 3:
-		return 0;
+		return;
 	default:
 		break;
 	}
+}
+
+int main()
+{
+	header();
+	int operation = menu();
+	choose(operation);
 	
 	return 0;
 }
