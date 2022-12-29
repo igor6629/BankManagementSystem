@@ -22,6 +22,7 @@ namespace ClientSpace
 		time_t currentWeekOfDeposit = NULL;
 		
 		bool closeDeposit = false;
+	
 	public:
 		Client(std::string name, std:: string lastname);
 		void ShowInfo();
