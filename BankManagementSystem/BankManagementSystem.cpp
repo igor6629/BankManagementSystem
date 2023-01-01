@@ -1,8 +1,10 @@
-﻿#include <iostream>
-#include "Client.h"
+﻿#include "Client.h"
+#include "Validation.h"
+#include <iostream>
 
 using namespace std;
 using namespace Account;
+using namespace validation;
 
 void header()
 {
@@ -30,7 +32,17 @@ int  menu()
 
 bool createNewClient()
 {
-	Client newClient;
+	Client* client = new Client();
+	string login;
+	string name;
+	string lastname;
+
+	cout << "Input Your login (contains only Aa-Zz, 0-9, \" - /= !_\", length: 5-14): ";
+	cin >> login;
+
+	while (!CheckLogin(login))
+		cin >> login;
+
 	return true;
 }
 
